@@ -1,7 +1,5 @@
-import { Company } from "./Company.js";
 import { connect, setAccount } from "./Global.js";
 import { Back } from "./Back.js";
-import { Route } from "./Route.js";
 
 var private_key = "6771a698cd261858da13d6df424a884d4520bb48e4c733e914b044dc72e09383";
 

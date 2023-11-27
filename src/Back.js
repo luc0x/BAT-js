@@ -8,7 +8,7 @@ import back_build from './../builds/Back2.json' assert  { type: "json" };
 
 export class Back
 {
-    get = (address) => 
+    get = (address) => // Obtiene un contrato que ya fue emitido
     {
         this.back = new web3.eth.Contract(
             back_build.abi,
@@ -16,7 +16,7 @@ export class Back
         );
     }
 
-    deploy = async () =>
+    deploy = async () => //  Crea un nuevo contrato y lo emite
     {
         this.back = new web3.eth.Contract(
             back_build.abi
@@ -74,9 +74,9 @@ export class Back
         return route;
     }
 
-    updateRoute = async (route, temperature, humidity, weight, date) =>
+    updateRoute = async (route, temperature, humidity, weight, time) =>
     {
-        await route.update(temperature, humidity, weight, date);
+        await route.update(temperature, humidity, weight, time);
     }
 
     endRoute = async (route, time) =>
@@ -84,21 +84,14 @@ export class Back
         await route.end(time);
     }
 
-    getCompanyByName = async (name, reciver_function) =>
+    getCompanies = async () =>
     {
-        const companies = await this.back.methods.getCompanies().call({from: account.address});
-        var return_company = new Company();
-        companies.forEach(async (address) =>
-        {
-            const company = new Company();
+        return await this.back.methods.getCompanies().call({from: account.address});
+    }
 
-            console.log(await company.getName());
-            if(await company.getName() == name)
-            {
-                return_company = company;
-            }
-        })
-        return await return_company; 
+    getRoutes = async () => 
+    {
+        return await this.back.methods.getRoutes().call({from: account.address});
     }
 
     getAddress  = async () =>
