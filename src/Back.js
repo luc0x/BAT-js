@@ -2,7 +2,11 @@ import {web3, account} from "./Global.js";
 import { Company } from "./Company.js";
 import { Route } from "./Route.js";
 // Contract builds
-import back_build from './../builds/Back2.json' assert  { type: "json" };
+import fs from 'fs';
+import path from "path";
+const bPath = path.resolve("./builds/Back2.json");
+
+var back_build = JSON.parse(fs.readFileSync(bPath));
 
 
 

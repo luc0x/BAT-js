@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/luc0x/BAT-js#readme",
   "dependencies": {
+    "fs": "^0.0.1-security",
     "web3": "^4.2.2"
   }
 }

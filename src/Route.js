@@ -1,5 +1,9 @@
 import { web3, account } from "./Global.js";
-import route_build from './../builds/Route.json' assert { type: "json" };
+import fs from 'fs';
+import path from "path";
+const rPath = path.resolve("./builds/Route.json");
+
+var route_build = JSON.parse(fs.readFileSync(rPath));
 
 export class Route
 {

@@ -1,5 +1,9 @@
+import path from "path";
 import { web3, account } from "./Global.js";
-import company_build from './../builds/Company.json' assert { type: 'json' };
+import fs from 'fs';
+const cPath = path.resolve("./builds/Company.json");
+
+var company_build = JSON.parse(fs.readFileSync(cPath));
 
 export class Company
 {

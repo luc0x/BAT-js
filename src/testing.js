@@ -1,23 +1,18 @@
 import { connect, setAccount } from "./Global.js";
 import { Back } from "./Back.js";
 
-var private_key = "6771a698cd261858da13d6df424a884d4520bb48e4c733e914b044dc72e09383";
+var private_key = "3b027ea11a25b38831bf4210198c54149b9bb8adabac560dd5e9a774ae2378f3";
 
 // 0.0.0.0 7545
-connect('0.0.0.0', 7545);
+connect('127.0.0.1', 7545);
 setAccount(private_key); 
-
-var reciver = (address) =>
-{
-    console.log(address);
-}
 
 const main = async () =>
 {
     const back = new Back();
-    await back.get("0x88fb6B24E07f5119902a774eeDFC61404476F3e9");
+    await back.deploy();
     console.log(await back.getAddress()); 
-
+    
     /*
     const route = await back.initializeRoute(company, 0, "Ruta del pollo K");
     console.log(await route.getName());
