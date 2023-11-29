@@ -1,5 +1,6 @@
-import path from "path";
 import { web3, account } from "./Global.js";
+
+import path from "path";
 import fs from 'fs';
 const cPath = path.resolve("./builds/Company.json");
 

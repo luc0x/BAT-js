@@ -11,9 +11,31 @@ const main = async () =>
 {
     const back = new Back();
     await back.deploy();
-    console.log(await back.getAddress()); 
+    
+    
+    console.log("Se deployeo el contrato back correctamente");
+    console.log("Direccion " + await back.getAddress());
+
+    const company = await back.createCompany("Hola");
+    console.warn();
+    console.log("Se deployeo la compania correctamente");    
+    console.log("Nombre " + await company.getName());
+    console.log("Direccion " + await company.getAddress());
     
     /*
+    const route = await back.initializeRoute(company, 1, "Ruta Loca"); 
+    console.warn();
+    console.log("Se deployeo la route correctamente");    
+    console.log("Nombre " + await route.getName());
+    console.log("Direccion " + await route.getAddress());
+    
+    console.warn();
+    back.updateRoute(route, 10, 10, 10, 10);
+    console.log(await (await route).getDataByIndex(0));
+    console.warn();
+    back.endRoute(route, 100);
+    console.log(await (await route).getResume());    
+    
     const route = await back.initializeRoute(company, 0, "Ruta del pollo K");
     console.log(await route.getName());
     */

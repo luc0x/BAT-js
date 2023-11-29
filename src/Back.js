@@ -2,8 +2,9 @@ import {web3, account} from "./Global.js";
 import { Company } from "./Company.js";
 import { Route } from "./Route.js";
 // Contract builds
-import fs from 'fs';
+
 import path from "path";
+import fs from 'fs';
 const bPath = path.resolve("./builds/Back2.json");
 
 var back_build = JSON.parse(fs.readFileSync(bPath));
