@@ -9,8 +9,6 @@ const bPath = path.resolve("./builds/Back2.json");
 
 var back_build = JSON.parse(fs.readFileSync(bPath));
 
-
-
 export class Back
 {
     get = (address) => // Obtiene un contrato que ya fue emitido
